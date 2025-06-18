@@ -13,17 +13,17 @@ public class Test {
         alg.agregarMedicion("Campo1", 2024, 5, 11, 20);
         alg.agregarMedicion("Campo2", 2024, 5, 10, 30);
         alg.agregarMedicion("Campo2", 2024, 5, 12, 25);
-        alg.agregarMedicion("Campo3", 2024, 5, 10, 0);
+        alg.agregarMedicion("Campo3", 2024, 5, 13, 1);
         alg.agregarMedicion("Campo6", 2024, 5, 10, 3454);
         alg.agregarMedicion("Campo3", 2024, 6, 5, 50);
         alg.agregarMedicion("Campo5", 2024, 6, 5, 550);
 
         // Test: promedioLluviaEnUnDia
-        System.out.println("--- Promedio lluvia en 10/05/2024 ---");
+        System.out.println("--- Promedio lluvia en dd/mm/yyyy ---");
         System.out.println(alg.promedioLluviaEnUnDia(2024, 5, 10));
 
         // Test: medicionesMes
-        System.out.println("\n--- Mediciones del mes 05/2024 ---");
+        System.out.println("\n--- Mediciones del mes mm/yyyy ---");
         ColaPrioridadTDA colaMes = alg.medicionesMes(2024, 5);
         while (!colaMes.colaVacia()) {
             System.out.println("DIA " + colaMes.prioridad() + ": " + colaMes.primero() + " mm");
@@ -31,7 +31,7 @@ public class Test {
         }
 
         // Test: medicionesCampoMes
-        System.out.println("\n--- Mediciones Campo2 en 05/2024 ---");
+        System.out.println("\n--- Mediciones Campoxx en mm/yyyy ---");
         ColaPrioridadTDA campo2 = alg.medicionesCampoMes("Campo2", 2024, 5);
         while (!campo2.colaVacia()) {
             System.out.println("DIA " + campo2.prioridad() + ": " + campo2.primero() + " mm");
@@ -51,7 +51,7 @@ public class Test {
         System.out.println(alg.campoMasLLuvisoHistoria());
 
         // Test: camposConLLuviaMayorPromedio
-        System.out.println("\n--- Campos con lluvia mayor al promedio en 05/2024 ---");
+        System.out.println("\n--- Campos con lluvia mayor al promedio en mm/yyyy ---");
         ColaStringTDA campos = alg.camposConLLuviaMayorPromedio(2024, 5);
         while (!campos.colaVacia()) {
             System.out.println(campos.primero());
@@ -60,7 +60,7 @@ public class Test {
 
         // Test: eliminarMedicion
         alg.eliminarMedicion("Campo1", 2024, 5, 11);
-        System.out.println("\n--- Campo1 luego de eliminar 11/05/2024 ---");
+        System.out.println("\n--- Campoxx luego de eliminar dd/mm/yyyy ---");
         ColaPrioridadTDA campo1 = alg.medicionesCampoMes("Campo1", 2024, 5);
         while (!campo1.colaVacia()) {
             System.out.println("DIA " + campo1.prioridad() + ": " + campo1.primero() + " mm");
