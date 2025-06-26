@@ -9,14 +9,16 @@ public class Test {
         Algoritmos alg = new Algoritmos();
 
         // Test: agregarMedicion
-        alg.agregarMedicion("Campo1", 2024, 5, 10, 15);
-        alg.agregarMedicion("Campo1", 2024, 5, 11, 20);
-        alg.agregarMedicion("Campo2", 2024, 5, 10, 30);
-        alg.agregarMedicion("Campo2", 2024, 5, 12, 25);
+        alg.agregarMedicion("Campo4", 2024, 5, 10, 15);
+        alg.agregarMedicion("Campo2", 2024, 5, 11, 20);
+        alg.agregarMedicion("Campo6", 2024, 5, 10, 30);
+        alg.agregarMedicion("Campo1", 2024, 5, 12, 25);
         alg.agregarMedicion("Campo3", 2024, 5, 13, 1);
-        alg.agregarMedicion("Campo6", 2024, 5, 10, 3454);
-        alg.agregarMedicion("Campo3", 2024, 6, 5, 50);
-        alg.agregarMedicion("Campo5", 2024, 6, 5, 550);
+        alg.agregarMedicion("Campo5", 2024, 5, 10, 3454);
+        alg.agregarMedicion("Campo0", 2025, 6, 26, 634);
+
+        System.out.println("Estado del árbol:");
+        alg.mostrarArbol();
 
         // Test: promedioLluviaEnUnDia
         System.out.println("--- Promedio lluvia en dd/mm/yyyy ---");
@@ -75,5 +77,8 @@ public class Test {
             System.out.println("DIA " + campo2borrado.prioridad() + ": " + campo2borrado.primero() + " mm");
             campo2borrado.desacolar();
         }
+
+        System.out.println("Estado del árbol:");
+        alg.mostrarArbol();
     }
 }

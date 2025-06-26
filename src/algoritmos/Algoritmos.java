@@ -248,5 +248,19 @@ public class Algoritmos {
 		agregarCamposMayores(arbol.hijoIzq(), periodo, promedio, resultado);
 		agregarCamposMayores(arbol.hijoDer(), periodo, promedio, resultado);
 	}
+
+	/**
+	 * Imprime en consola el árbol de campos en forma de texto
+	 */
+	public void mostrarArbol() {
+		mostrar(arbol, "", true);
+	}
+
+	private void mostrar(ABBPrecipitacionesTDA nodo, String prefijo, boolean esUltimo) {
+		if (nodo.arbolVacio()) return;
+		System.out.println(prefijo + (esUltimo ? "└── " : "├── ") + nodo.raiz());
+		mostrar(nodo.hijoIzq(), prefijo + (esUltimo ? "    " : "│   "), false);
+		mostrar(nodo.hijoDer(), prefijo + (esUltimo ? "    " : "│   "), true);
+	}
 	
 }
